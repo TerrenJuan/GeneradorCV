@@ -17,6 +17,8 @@ public class ExperienciaScreen {
 
     JPanel panelExperiencia = new JPanel();
 
+    JLabel lblExperiencia = new JLabel("Experiencia");
+
     JLabel lblFechaInicio = new JLabel("Fecha de inicio");
     JLabel lblTrabajo = new JLabel("Tipo de trabajo");
     JLabel lblDescripcion = new JLabel("Descripcion");
@@ -40,8 +42,6 @@ public class ExperienciaScreen {
     private final int pos_Y_3 = 120;
     private final int pos_Y_4 = 280;
 
-    public int contador = 0;
-
     public ExperienciaScreen() {
         ExperienciasList experienciasList = new ExperienciasList();
         Experiencia experienciaAux = new Experiencia();
@@ -62,6 +62,8 @@ public class ExperienciaScreen {
         panelExperiencia.add(lblDescripcion);
 
         txtDescripcion.setBounds(pos_X_2, pos_Y_3, 350, 150);
+        txtDescripcion.setLineWrap(true);
+        txtDescripcion.setWrapStyleWord(true);
         panelExperiencia.add(txtDescripcion);
 
         btnAdd.setBounds(pos_X_3, pos_Y_4, 90, 40);
@@ -84,7 +86,6 @@ public class ExperienciaScreen {
         btnAdd.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                experienciaAux.setId(contador);
                 experienciaAux.setFechaInicio(txtFechaInicio.getText());
                 experienciaAux.setTipoTrabajo(txtTrabajo.getText());
                 experienciaAux.setDescripcion(txtDescripcion.getText());
@@ -92,22 +93,19 @@ public class ExperienciaScreen {
                 ExperienciasList.experienciasList.add(experienciaAux);
                 String borrar = "Borrar";
 
-                GeneradorCV.model.addRow(
+                GeneradorCV.modelExperiencia.addRow(
                         new Object[]{
                                 experienciaAux.getFechaInicio(),
                                 experienciaAux.getTipoTrabajo(),
                                 borrar,
-                                experienciaAux.getId()
+
 
                         });
                 frameExperiencia.dispose();
-                contador++;
+
             }
 
         });
-
-
-
 
         panelExperiencia.setLayout(null);
         panelExperiencia.setPreferredSize(new Dimension(600, 400));
