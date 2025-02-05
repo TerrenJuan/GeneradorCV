@@ -1,14 +1,20 @@
 package com.iessanalberto.JTT.models;
 
-import javax.swing.*;
 import java.util.ArrayList;
-
+/*
+ *
+ * @author Juan Terrén
+ * @since 5FEB2025
+ *
+ */
 public class ExperienciasList {
 
     public static ArrayList<Experiencia> experienciasList = new ArrayList<>();
 
+    // Constructor vacío de la clase
     public ExperienciasList() {}
 
+    // Getters & Setters
     public ArrayList<Experiencia> getExperienciasList() {
         return experienciasList;
     }
@@ -17,16 +23,4 @@ public class ExperienciasList {
         ExperienciasList.experienciasList = experienciasList;
     }
 
-
-    /*public ArrayList<Experiencia> comprobarExperiencia (JTable tablaExperiencia){
-        ArrayList<Experiencia> experienciasAUX = new ArrayList<>();
-        for (Experiencia experienciaAux:this.getExperienciasList()) {
-            if (tablaExperiencia.get(experienciaAux.getFechaInicio())){
-
-            }
-        }
-
-
-        return experienciasAUX;
-    }*/
 }

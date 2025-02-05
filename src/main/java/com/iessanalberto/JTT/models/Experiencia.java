@@ -1,5 +1,10 @@
 package com.iessanalberto.JTT.models;
-
+/*
+ *
+ * @author Juan Terrén
+ * @since 5FEB2025
+ *
+ */
 public class Experiencia {
 
     private String fechaInicio;
@@ -7,9 +12,11 @@ public class Experiencia {
     private String descripcion;
     private int id;
 
+    // Constructor vacío de la clase
     public Experiencia() {
     }
 
+    // Getters & Setters
     public String getFechaInicio() {
         return fechaInicio;
     }

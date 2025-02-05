@@ -1,5 +1,10 @@
 package com.iessanalberto.JTT.models;
-
+/*
+ *
+ * @author Juan Terrén
+ * @since 5FEB2025
+ *
+ */
 public class SobreTi {
 
     private String nombre;
@@ -8,9 +13,11 @@ public class SobreTi {
     private String imagen;
     private String presentacion;
 
+    // Constructor vacío de la clase
     public SobreTi() {
     }
 
+    // Getters & Setters
     public String getNombre() {
         return nombre;
     }
